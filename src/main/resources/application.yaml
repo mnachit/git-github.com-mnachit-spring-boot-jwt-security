@@ -1,0 +1,31 @@
+# Server Local
+server:
+  port: 8001
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  output:
+    ansi:
+      enabled: always
+  cloud:
+    config:
+      import-check:
+        enabled: false
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/spring-jwt?createDatabaseIfNotExist=true
+    username: root
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+
+  liquibase:
+    #    change-log: classpath:./db/changelog/changelog-master.xml
+    enabled: false
