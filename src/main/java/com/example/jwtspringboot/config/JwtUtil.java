@@ -51,15 +51,12 @@ public class JwtUtil {
                 .compact();
     }
 
-    // طرق مساعدة للحصول على معلومات إضافية
     private String getCurrentIpAddress() {
-        // احصل على عنوان IP الحالي من طلب HTTP
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         return request.getRemoteAddr();
     }
 
     private String getUserAgent() {
-        // احصل على معلومات المتصفح
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         return request.getHeader("User-Agent");
     }
